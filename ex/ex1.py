@@ -4,7 +4,7 @@ import torch
 
 model = YOLO("yolo11x-pose.pt")
 count=0
-path=r"C:\Users\antia\Desktop\ryoikiB\ex\ex1-26.png"
+path=r".\ex1-26.png"
 results = model(path,conf=0.25)
 # 1人目のキーポイント(x,y)を獲得する．
 # 2人目はresults[0].keypoints.xy[1]に格納されている．
@@ -29,11 +29,11 @@ for box in boxes:
 
 cv2.putText(
     img,                     
-    f"Count: {count}",       
+    f"person: {count}",       
     (30, 50),                
     cv2.FONT_HERSHEY_SIMPLEX, 
     1.5,                     
-    (155, 155, 0),             
+    (0, 0, 255),             
     3                        
 )
     
