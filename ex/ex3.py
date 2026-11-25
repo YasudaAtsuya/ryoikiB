@@ -4,7 +4,7 @@ import torch
 
 model = YOLO("best260408.pt")
 count=0
-path=r".\ex2-26.png"
+path=r".\ex1-26.png"
 print(model.names)
 results = model(path, conf=0.1, imgsz=1536)
 
