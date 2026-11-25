@@ -2,13 +2,15 @@ from ultralytics import YOLO
 import cv2
 import torch
 
-model = YOLO("yolo11x-pose.pt")
+model = YOLO("yolov8n.pt")
 count=0
 path=r".\ex2-26.png"
-results = model(path, conf=0.15,imgsz=1536)
-
+results = model(path,conf=0.215)
+# 1人目のキーポイント(x,y)を獲得する．
+# 2人目はresults[0].keypoints.xy[1]に格納されている．
 img = results[0].orig_img
 
+# 認識した物体領域を取得する．
 boxes = results[0].boxes
 
 for box in boxes:
