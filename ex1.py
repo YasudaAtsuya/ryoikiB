@@ -5,7 +5,7 @@ import torch
 model = YOLO("yolo11x-pose.pt")
 count=0
 path=r".\ex1-26.png"
-results = model(path,conf=0.25)
+results = model(path,conf=0.135)
 # 1人目のキーポイント(x,y)を獲得する．
 # 2人目はresults[0].keypoints.xy[1]に格納されている．
 img = results[0].orig_img
